@@ -6,18 +6,18 @@ public class KatSpawner : MonoBehaviour
 {
     public float spawnDelay = 3f;
     public GameObject[] Kattis;
-    public int[] spwPos;
+    public Transform[] spwPos;
     // Start is called before the first frame update
     void Start()
     {
-        Pick();
+    
     }
 
    void Pick() 
     { 
         int randomIndex = Random.Range(0, Kattis.Length);
         int randomIndex2 = Random.Range(0, spwPos.Length);
-        GameObject clone = Instantiate(Kattis[randomIndex],transform.position, Quaternion.identity);
+        GameObject clone = Instantiate(Kattis[randomIndex], spwPos[randomIndex2].position, Quaternion.identity);
     }
     
     
@@ -25,7 +25,10 @@ public class KatSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     
+        if (Input.GetKeyDown("f"))
+        {
+            Pick();
+        }
     }
 
 }
