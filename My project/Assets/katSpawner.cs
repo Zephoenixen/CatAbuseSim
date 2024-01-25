@@ -5,30 +5,38 @@ using UnityEngine;
 public class KatSpawner : MonoBehaviour
 {
     public float spawnDelay = 3f;
-    public GameObject[] Kattis;
-    public Transform[] spwPos;
-    // Start is called before the first frame update
-    void Start()
+    private float nextSpw = 1;
+    public float katSpwnHeight = -10;
+
+    public bool gameStarted = true;
+    public int[] spwPos;
+    public GameObject[] Kats;
+    public List<GameObject> SpawnsClear;
+  
+    private void Start()
     {
-    
+        
     }
 
-   void Pick() 
-    { 
-        int randomIndex = Random.Range(0, Kattis.Length);
-        int randomIndex2 = Random.Range(0, spwPos.Length);
-        GameObject clone = Instantiate(Kattis[randomIndex], spwPos[randomIndex2].position, Quaternion.identity);
+    void Pick()
+    {
+        int randomKat = Random.Range(0, Kats.Length);
+        int randomSpw = Random.Range(0, spwPos.Length);
+        GameObject clone = Instantiate(Kats[randomKat], new Vector3(spwPos[randomSpw],katSpwnHeight,0), Quaternion.identity);
     }
-    
-    
-    
-    // Update is called once per frame
+
     void Update()
     {
-        if (Input.GetKeyDown("f"))
-        {
-            Pick();
+        if (Time.time > nextSpw)
+        { 
+            if (gameStarted == true)
+            {
+                Pick();
+                nextSpw = Time.time + spawnDelay;
+            }
         }
+
     }
+   
 
 }
