@@ -393,7 +393,7 @@ MonoBehaviour:
   Bonk: {x: 0, y: -7, z: 0}
   PosAvaliable: 01010101
   Pos: f7fffffffdffffff0300000009000000
-  KatAvaliable: 
+  KatAvaliable: 01010101
   Ferb: {fileID: 1405265984}
   Osrb: {fileID: 1768410019}
   Parb: {fileID: 699000308}
