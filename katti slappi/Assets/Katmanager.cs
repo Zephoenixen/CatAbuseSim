@@ -35,6 +35,7 @@ public class Katmanager : MonoBehaviour
 
 
 
+
     }
     // Katmover står for at bevæge kattene ind i de rigtige felter når cooldown er slut
     void KatMover()
@@ -58,13 +59,13 @@ public class Katmanager : MonoBehaviour
                 if (RandoKat == 0)
                 {
                     Fernando.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Ferb.velocity = Vel;
+                    Ferb.velocity = Vel; 
 
                 }
                 else if (RandoKat == 1)
                 {
                     Ost.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Osrb.velocity = Vel;
+                    Osrb.velocity = Vel; 
 
                 }
                 else if (RandoKat == 2)
@@ -76,7 +77,7 @@ public class Katmanager : MonoBehaviour
                 else if (RandoKat == 3)
                 {
                     Placeholder1.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Plrb.velocity = Vel;
+                    Plrb.velocity = Vel; 
 
                 }
                 //Den her advarer om at katmover er i stykker fordi den burde aldrig vælge en randokat større end 3
@@ -95,7 +96,7 @@ public class Katmanager : MonoBehaviour
         {
             BroadcastMessage("Bonker", 1f);
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKeyDown(KeyCode.UpArrow))    
         {
             BroadcastMessage("Bonker", 2f);
         }
@@ -113,13 +114,7 @@ public class Katmanager : MonoBehaviour
         //if (dead.All(dead[] == true))
         if (true)
         { KatMover(); }
-        foreach (bool place in KatAvaliable)
-        {
-            if (place == false)
-            {
-                break;
-            }
-        }
+
     }
 
 }

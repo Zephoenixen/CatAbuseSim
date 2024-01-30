@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4862691276413009966}
   - component: {fileID: 3072223853380431905}
   - component: {fileID: -7896563197358707498}
+  - component: {fileID: -3486011347592877231}
   m_Layer: 0
   m_Name: Patooty
   m_TagString: Kats
@@ -112,3 +113,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-3486011347592877231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6356427010606419425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Leftmostlane: -9
+  Rightmostlane: 9
+  Middleleftlane: -3
+  Middlerightlane: 3
+  bonkvel: -7
+  rb: {fileID: -7896563197358707498}
