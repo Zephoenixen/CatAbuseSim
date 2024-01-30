@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Katmanager : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Katmanager : MonoBehaviour
 
     public Vector3 Vel = new Vector3(0, 2, 0);
     public Vector3 Bonk = new Vector3(0, -7, 0);
+
     // Arrays hvori vi har positionerne kattene kan blive sat i og om de er i brug eller ej, og hvor vi har kattene og om de er i brug
     public bool[] PosAvaliable;
     public int[] Pos;
@@ -30,10 +32,9 @@ public class Katmanager : MonoBehaviour
     void Start()
     {
 
-        //Flytter kattene langt væk fra skærmen
 
 
-        
+
     }
     // Katmover står for at bevæge kattene ind i de rigtige felter når cooldown er slut
     void KatMover()
@@ -57,13 +58,13 @@ public class Katmanager : MonoBehaviour
                 if (RandoKat == 0)
                 {
                     Fernando.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Ferb.velocity = Vel; 
+                    Ferb.velocity = Vel;
 
                 }
                 else if (RandoKat == 1)
                 {
                     Ost.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Osrb.velocity = Vel; 
+                    Osrb.velocity = Vel;
 
                 }
                 else if (RandoKat == 2)
@@ -75,7 +76,7 @@ public class Katmanager : MonoBehaviour
                 else if (RandoKat == 3)
                 {
                     Placeholder1.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Plrb.velocity = Vel; 
+                    Plrb.velocity = Vel;
 
                 }
                 //Den her advarer om at katmover er i stykker fordi den burde aldrig vælge en randokat større end 3
@@ -84,27 +85,41 @@ public class Katmanager : MonoBehaviour
         }
     }
 
+
+
     // Update is called once per frame
     void Update()
     {
-
         //De her tjekker om man trykker på rigtige knap og om der er en kat der før den slår katten i feltet
-        if ((Input.GetKeyDown(KeyCode.DownArrow)) && (PosAvaliable[2] = false))
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            ;
+            BroadcastMessage("Bonker", 1f);
         }
-        if (!PosAvaliable.All(x => x)) {; }
-        if (true) { KatMover(); }
-        //if (dead.All(dead[] == true))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            BroadcastMessage("Bonker", 2f);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            BroadcastMessage("Bonker", 3f);
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            BroadcastMessage("Bonker", 4f);
+        }
 
+        if (!PosAvaliable.All(x => x)) {; }
+
+        //if (dead.All(dead[] == true))
+        if (true)
+        { KatMover(); }
         foreach (bool place in KatAvaliable)
         {
-            if (place ==false)
+            if (place == false)
             {
                 break;
             }
         }
-
-
     }
+
 }
