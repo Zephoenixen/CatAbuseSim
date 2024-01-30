@@ -59,6 +59,14 @@ public class Katmanager : MonoBehaviour
         }
         //if (dead.All(dead[] == true))
 
+        foreach (bool place in KatAvaliable)
+        {
+            if (place ==false)
+            {
+                break;
+            }
+        }
+
 
     }
 }
