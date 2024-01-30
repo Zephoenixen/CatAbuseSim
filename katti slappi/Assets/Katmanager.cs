@@ -12,7 +12,7 @@ public class Katmanager : MonoBehaviour
     public GameObject Fernando;
     public GameObject Placeholder1;
 
-    public Vector2 Katstpos = new Vector2(-20, -20);
+
     public Vector3 Vel = new Vector3(0, 2, 0);
     public Vector3 Bonk = new Vector3(0, -7, 0);
     // Arrays hvori vi har positionerne kattene kan blive sat i og om de er i brug eller ej, og hvor vi har kattene og om de er i brug
@@ -25,16 +25,13 @@ public class Katmanager : MonoBehaviour
     public Rigidbody2D Parb;
     public Rigidbody2D Plrb;
     //Cooldown sådan at vi ikke har 5 tusinde katte på en gang
-    bool cooldown;
+
     // Start is called before the first frame update
     void Start()
     {
 
         //Flytter kattene langt væk fra skærmen
-        Patooty.transform.position = Katstpos;
-        Ost.transform.position = Katstpos;
-        Fernando.transform.position = Katstpos;
-        Placeholder1.transform.position = Katstpos;
+
 
         
     }
@@ -61,25 +58,25 @@ public class Katmanager : MonoBehaviour
                 {
                     Fernando.transform.position = new Vector2(Pos[RandoPos], -9);
                     Ferb.velocity = Vel; 
-                    cooldown = true;
+
                 }
                 else if (RandoKat == 1)
                 {
                     Ost.transform.position = new Vector2(Pos[RandoPos], -9);
                     Osrb.velocity = Vel; 
-                    cooldown = true;
+
                 }
                 else if (RandoKat == 2)
                 {
                     Patooty.transform.position = new Vector2(Pos[RandoPos], -9);
                     Parb.velocity = Vel;
-                    cooldown = true;
+
                 }
                 else if (RandoKat == 3)
                 {
                     Placeholder1.transform.position = new Vector2(Pos[RandoPos], -9);
                     Plrb.velocity = Vel; 
-                    cooldown = true;
+
                 }
                 //Den her advarer om at katmover er i stykker fordi den burde aldrig vælge en randokat større end 3
                 else { Debug.Log("KatMover Broke"); }
@@ -90,14 +87,14 @@ public class Katmanager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(cooldown = false) { KatMover(); }
+
         //De her tjekker om man trykker på rigtige knap og om der er en kat der før den slår katten i feltet
         if ((Input.GetKeyDown(KeyCode.DownArrow)) && (PosAvaliable[2] = false))
         {
             ;
         }
         if (!PosAvaliable.All(x => x)) {; }
-
+        if (true) { KatMover(); }
         //if (dead.All(dead[] == true))
 
         foreach (bool place in KatAvaliable)
