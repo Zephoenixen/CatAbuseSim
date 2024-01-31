@@ -13,6 +13,9 @@ public class Katmanager : MonoBehaviour
     public GameObject Patooty;
     public GameObject Fernando;
     public GameObject Kattemad;
+    public GameObject Milk;
+    public GameObject Bernard;
+    public GameObject Storemis;
 
     //CoolDown Manager
     public float cooldown = 3f;
@@ -34,6 +37,9 @@ public class Katmanager : MonoBehaviour
     public Rigidbody2D Osrb;
     public Rigidbody2D Parb;
     public Rigidbody2D Karb;
+    public Rigidbody2D Mirb;
+    public Rigidbody2D Berb;
+    public Rigidbody2D Strb;
     //Cooldown sådan at vi ikke har 5 tusinde katte på en gang
 
     // Start is called before the first frame update
@@ -87,6 +93,24 @@ public class Katmanager : MonoBehaviour
                 {
                     Kattemad.transform.position = new Vector2(Pos[RandoPos], -9);
                     Karb.velocity = Vel;
+
+                }
+                else if (RandoKat == 4)
+                {
+                    Milk.transform.position = new Vector2(Pos[RandoPos], -9);
+                    Mirb.velocity = Vel;
+
+                }
+                else if (RandoKat == 5)
+                {
+                    Bernard.transform.position = new Vector2(Pos[RandoPos], -9);
+                    Berb.velocity = Vel;
+
+                }
+                else if (RandoKat == 6)
+                {
+                    Storemis.transform.position = new Vector2(Pos[RandoPos], -9);
+                    Strb.velocity = Vel;
 
                 }
                 //Den her advarer om at katmover er i stykker fordi den burde aldrig vælge en randokat større end 3
@@ -182,6 +206,18 @@ public class Katmanager : MonoBehaviour
         else if (katreset == 4)
         {
             KatAvaliable[3] = true;
+        }
+        else if (katreset == 5)
+        {
+            KatAvaliable[4] = true;
+        }
+        else if (katreset == 6)
+        {
+            KatAvaliable[5] = true;
+        }
+        else if (katreset == 7)
+        {
+            KatAvaliable[6] = true;
         }
     }
 }

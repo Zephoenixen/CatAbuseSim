@@ -17,7 +17,7 @@ public class Bonkchecker : MonoBehaviour
     {
         Debug.Log("BONK");
         rb.velocity = new Vector3(0, bonkvel, 0);
-        if (tag == "Ferrrrrrnando")
+        if (tag == "Fernando")
         {
             SceneManager.LoadScene("Main Menu");
         }

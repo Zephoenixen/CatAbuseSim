@@ -41,5 +41,17 @@ public class Checkbox : MonoBehaviour
         {
             SendMessageUpwards("Katreset", 4f);
         }
+        else if (collision.gameObject.CompareTag("Milk"))
+        {
+            SendMessageUpwards("Katreset", 5f);
+        }
+        else if (collision.gameObject.CompareTag("Bernard"))
+        {
+            SendMessageUpwards("Katreset", 6f);
+        }
+        else if (collision.gameObject.CompareTag("Storemis"))
+        {
+            SendMessageUpwards("Katreset", 7f);
+        }
     }
 }
