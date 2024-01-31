@@ -5,13 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Scenechange : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
       if (Input.GetKeyDown(KeyCode.RightArrow)) { SceneManager.LoadScene("Game Scene(Post Bonk)"); }
