@@ -11,10 +11,16 @@ public class Bonkchecker : MonoBehaviour
     public int Middlerightlane = 3;
     public int bonkvel = -7;
     public Rigidbody2D rb;
-    // Start is called before the first frame update
-    private void Start()
+    
+
+       void bonk()
     {
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        Debug.Log("BONK");
+        rb.velocity = new Vector3(0, bonkvel, 0);
+        if (tag == "Ferrrrrrnando")
+        {
+            SceneManager.LoadScene("Main Menu");
+        }
     }
     public void Bonker(float Identifier) 
     { 
@@ -23,36 +29,21 @@ public class Bonkchecker : MonoBehaviour
         { 
             if (transform.position.x == Leftmostlane)
             {
-                Debug.Log("BONK");
-                rb.velocity = new Vector3(0,bonkvel,0);
-                if (tag == "Ferrrrrrnando")
-                {
-                    SceneManager.LoadScene("Main Menu");
-                }
+                bonk();
             }
         }
     else if(Identifier == 2)
         {
             if(transform.position.x == Middleleftlane)
             {
-                Debug.Log("BONK");
-                rb.velocity = new Vector3(0, bonkvel, 0);
-                if (tag == "Ferrrrrrnando")
-                {
-                    SceneManager.LoadScene("Main Menu");
-                }
+                bonk();
             }
         }
     else if (Identifier == 3)
         {
             if(transform.position.x == Middlerightlane)
             {
-                Debug.Log("BONK");
-                rb.velocity = new Vector3(0, bonkvel, 0);
-                if (tag == "Ferrrrrrnando")
-                {
-                    SceneManager.LoadScene("Main Menu");
-                }
+                bonk();
             }
         }
     else if (Identifier == 4)
@@ -60,25 +51,29 @@ public class Bonkchecker : MonoBehaviour
 
             if(transform.position.x == Rightmostlane)
             {
-                Debug.Log("BONK");
-                rb.velocity = new Vector3(0, bonkvel, 0);
-                if (tag == "Ferrrrrrnando")
-                {
-                    SceneManager.LoadScene("Main Menu");
-                }
+                bonk();  
             }
         }
     }
+
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (CompareTag("Kats")) 
-        { 
-            SceneManager.LoadScene("Main Menu"); 
-        }
-
-        else if (CompareTag("Ferrrrrrnando")) 
+        if (CompareTag("Fernando")) 
         { 
             rb.velocity = new Vector3(0, bonkvel, 0); 
+        }
+        else
+        {
+            if (collision.gameObject.CompareTag("Killbox"))
+                {
+                SceneManager.LoadScene("Main Menu");
+            }   
+        }
+        if (collision.gameObject.CompareTag("triggerBox"))
+        {
+            rb.velocity = new Vector2(0, 0);
+            transform.position = new Vector2(-10, -10);
         }
     }
 }
