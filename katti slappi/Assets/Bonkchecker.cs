@@ -13,41 +13,41 @@ public class Bonkchecker : MonoBehaviour
     public Rigidbody2D rb;
     
 
-       void bonk()
+    void bonk()
     {
         Debug.Log("BONK");
         rb.velocity = new Vector3(0, bonkvel, 0);
+        
         if (tag == "Fernando")
-        {
-            
-            SceneManager.LoadScene("Bonk Scene");
-        }
+            {
+                SceneManager.LoadScene("Bonk Scene");
+            }
     }
     public void Bonker(float Identifier) 
     { 
 
-    if(Identifier == 1) 
+        if(Identifier == 1) 
         { 
             if (transform.position.x == Leftmostlane)
             {
                 bonk();
             }
         }
-    else if(Identifier == 2)
+        else if(Identifier == 2)
         {
             if(transform.position.x == Middleleftlane)
             {
                 bonk();
             }
         }
-    else if (Identifier == 3)
+        else if (Identifier == 3)
         {
             if(transform.position.x == Middlerightlane)
             {
                 bonk();
             }
         }
-    else if (Identifier == 4)
+        else if (Identifier == 4)
         {
 
             if(transform.position.x == Rightmostlane)
