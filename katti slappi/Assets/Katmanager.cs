@@ -18,7 +18,7 @@ public class Katmanager : MonoBehaviour
     public GameObject Storemis;
 
     //Brugt til points og til at ændre spillets hastighed baseret på hvor langt tid man har spillet
-    public int scorepoints;
+    public int points;
     private float timeVar;
     private float velTime;
     private float cooldownSpeeder;
@@ -147,9 +147,6 @@ public class Katmanager : MonoBehaviour
         }
     }
 
-   
-
-
     public void Spawner()
     {
         if (Time.time > nextKat)
@@ -239,7 +236,7 @@ public class Katmanager : MonoBehaviour
         }
     }
 
-    void Points()
+    void Score()
     {
 
     }
@@ -253,7 +250,7 @@ public class Katmanager : MonoBehaviour
         //Gør spillet hurtigere og sværere over tid, samt laver scores og highscores
         Progression();
 
-        Points();
+        Score();
     
     }
     

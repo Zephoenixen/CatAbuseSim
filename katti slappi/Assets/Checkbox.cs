@@ -27,7 +27,6 @@ public class Checkbox : MonoBehaviour
         if (collision.gameObject.CompareTag("Fernando")) 
         { 
             SendMessageUpwards("Katreset", 1f);
-            Debug.Log("FERNANDO");
         }
         else if (collision.gameObject.CompareTag("Ost"))
         {
