@@ -15,11 +15,12 @@ TagManager:
   - Milk
   - Bernard
   - Storemis
+  - Ferrrrrrnando
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Effects
   - Water
   - UI
   - 

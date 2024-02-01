@@ -19,6 +19,7 @@ public class Bonkchecker : MonoBehaviour
         rb.velocity = new Vector3(0, bonkvel, 0);
         if (tag == "Fernando")
         {
+            
             SceneManager.LoadScene("Main Menu");
         }
     }
@@ -67,7 +68,7 @@ public class Bonkchecker : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Killbox"))
                 {
-                SceneManager.LoadScene("Main Menu");
+                SceneManager.LoadScene("Scrath Scene");
             }   
         }
         if (collision.gameObject.CompareTag("triggerBox"))
