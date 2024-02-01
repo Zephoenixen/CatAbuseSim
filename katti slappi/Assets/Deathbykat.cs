@@ -21,6 +21,7 @@ IEnumerator Cameraflash()
         yield return new WaitForSeconds(1);
         Camera.backgroundColor = Color.white;
         Scratch1.color = Color.white;
+        SendMessage("Sound", "Scratch");
 
         yield return new WaitForSeconds(0.2f);
         Camera.backgroundColor = backgroundcolor;
@@ -29,6 +30,7 @@ IEnumerator Cameraflash()
         yield return new WaitForSeconds(0.4f);
         Camera.backgroundColor = Color.white;
         Scratch2.color = Color.white;
+        SendMessage("Sound", "Scratch");
 
         yield return new WaitForSeconds(0.2f);
         Camera.backgroundColor = backgroundcolor;
@@ -37,6 +39,7 @@ IEnumerator Cameraflash()
         yield return new WaitForSeconds(0.4f);
         Camera.backgroundColor = Color.white;
         Scratch1.color = Color.white;
+        SendMessage("Sound", "Scratch");
 
         yield return new WaitForSeconds(0.2f);
         Camera.backgroundColor = backgroundcolor;
