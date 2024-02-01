@@ -236,9 +236,9 @@ public class Katmanager : MonoBehaviour
         }
     }
 
-    void Score()
+    void Score(int Points)
     {
-
+        points += Points;
     }
     // Update is called once per frame
     void Update()
@@ -250,7 +250,7 @@ public class Katmanager : MonoBehaviour
         //Gør spillet hurtigere og sværere over tid, samt laver scores og highscores
         Progression();
 
-        Score();
+
     
     }
     

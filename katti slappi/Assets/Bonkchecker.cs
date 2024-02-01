@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Bonkchecker : MonoBehaviour
 {
+    public int Scoreworth = 1;
     public int Leftmostlane = -9;
     public int Rightmostlane = 9;
     public int Middleleftlane = -3;
@@ -17,7 +18,7 @@ public class Bonkchecker : MonoBehaviour
     {
         Debug.Log("BONK");
         rb.velocity = new Vector3(0, bonkvel, 0);
-        
+        SendMessageUpwards("Score", Scoreworth);
         if (tag == "Fernando")
             {
                 SceneManager.LoadScene("Bonk Scene");
