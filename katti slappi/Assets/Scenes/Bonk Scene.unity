@@ -641,6 +641,7 @@ MonoBehaviour:
   amgry: {fileID: 466346238}
   Wham: {fileID: 861821740}
   Hands: {fileID: 1171077452}
+  Camera: {fileID: 1680354831}
 --- !u!114 &1370464195
 MonoBehaviour:
   m_ObjectHideFlags: 0
