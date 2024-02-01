@@ -72,6 +72,7 @@ public class Katmanager : MonoBehaviour
                 //Både Kat og Pos avaliable bliver slået fra sådan både felt og kat er i brug
                 PosAvaliable[RandoPos] = false;
                 KatAvaliable[RandoKat] = false;
+                //Gør at der går (cooldown) mængde tid til den næste kat spawner
                 nextKat = Time.time + cooldown;
                 //Debuglog for at tjekke det virker
                 Debug.Log("bev�gelse");
@@ -124,6 +125,7 @@ public class Katmanager : MonoBehaviour
         }
         else
         {
+            //gør at den prøver at finde en kat i tick'et efter
             nextKat = Time.time;
         }
     }
