@@ -15,8 +15,10 @@ public class handmover : MonoBehaviour
     void Handtime()
     {
         transform.position += new Vector3(0, -20, 0);
+
         Debug.Log("hands");
         Rigidbody rb = GetComponent<Rigidbody>();
+
         rb.velocity = new Vector3(0,0,-4);
 
             

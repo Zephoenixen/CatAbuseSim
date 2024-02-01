@@ -27,7 +27,7 @@ public class Fade : MonoBehaviour
         while (counter < duration)
         {
             counter += Time.deltaTime;
-            //Fade from 1 to 0
+            //Fade from 0 to 1
             float alpha = Mathf.Lerp(0, 1, counter / duration);
             Debug.Log(alpha);
 

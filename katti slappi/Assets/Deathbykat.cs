@@ -18,16 +18,22 @@ IEnumerator Cameraflash()
     {
         yield return new WaitForSeconds(1);
         Camera.backgroundColor = Color.white;
+
         yield return new WaitForSeconds(0.2f);
         Camera.backgroundColor = backgroundcolor;
+
         yield return new WaitForSeconds(0.4f);
         Camera.backgroundColor = Color.white;
+
         yield return new WaitForSeconds(0.2f);
         Camera.backgroundColor = backgroundcolor;
+
         yield return new WaitForSeconds(0.4f);
         Camera.backgroundColor = Color.white;
+
         yield return new WaitForSeconds(0.2f);
         Camera.backgroundColor = backgroundcolor;
+
         yield return new WaitForSeconds(0.1f);
         SceneManager.LoadScene("Menu Screen");
     }
