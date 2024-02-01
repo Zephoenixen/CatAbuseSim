@@ -4,7 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Spritechanger : MonoBehaviour
+public class Fernandobonk : MonoBehaviour
 {
 
     public SpriteRenderer prebonk;

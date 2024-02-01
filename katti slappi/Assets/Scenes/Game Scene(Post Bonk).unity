@@ -509,8 +509,8 @@ Transform:
   m_GameObject: {fileID: 312639167}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 5.09}
+  m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 0}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 519420032}
@@ -764,7 +764,7 @@ MonoBehaviour:
   Milk: {fileID: 5198858254509284431}
   Bernard: {fileID: 5198858255349525708}
   Storemis: {fileID: 5198858255908146921}
-  scorepoints: 0
+  points: 0
   speedScale: 0.15
   cooldownScale: 0.05
   cooldown: 3
@@ -1872,6 +1872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scoreworth: 1
   Leftmostlane: -9
   Rightmostlane: 9
   Middleleftlane: -3
@@ -1937,6 +1938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scoreworth: 1
   Leftmostlane: -9
   Rightmostlane: 9
   Middleleftlane: -3
@@ -1955,6 +1957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scoreworth: 1
   Leftmostlane: -9
   Rightmostlane: 9
   Middleleftlane: -3
@@ -1973,6 +1976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scoreworth: 1
   Leftmostlane: -9
   Rightmostlane: 9
   Middleleftlane: -3
@@ -1991,6 +1995,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scoreworth: 1
   Leftmostlane: -9
   Rightmostlane: 9
   Middleleftlane: -3
@@ -2009,6 +2014,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scoreworth: 1
   Leftmostlane: -9
   Rightmostlane: 9
   Middleleftlane: -3
@@ -2117,6 +2123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Scoreworth: 1
   Leftmostlane: -9
   Rightmostlane: 9
   Middleleftlane: -3
