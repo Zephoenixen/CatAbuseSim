@@ -7,6 +7,8 @@ public class Deathbykat : MonoBehaviour
 {
     public Color backgroundcolor;
     public Camera Camera;
+    public SpriteRenderer Scratch1, Scratch2, Gameover, Press;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,23 +20,46 @@ IEnumerator Cameraflash()
     {
         yield return new WaitForSeconds(1);
         Camera.backgroundColor = Color.white;
+        Scratch1.color = Color.white;
 
         yield return new WaitForSeconds(0.2f);
         Camera.backgroundColor = backgroundcolor;
+        Scratch1.color = new Color(0, 0, 0, 0);
 
         yield return new WaitForSeconds(0.4f);
         Camera.backgroundColor = Color.white;
+        Scratch2.color = Color.white;
 
         yield return new WaitForSeconds(0.2f);
         Camera.backgroundColor = backgroundcolor;
+        Scratch2.color = new Color(0, 0,0,0);
 
         yield return new WaitForSeconds(0.4f);
         Camera.backgroundColor = Color.white;
+        Scratch1.color = Color.white;
 
         yield return new WaitForSeconds(0.2f);
         Camera.backgroundColor = backgroundcolor;
+        Scratch1.color = new Color(0,0,0,0);
 
         yield return new WaitForSeconds(0.1f);
-        SceneManager.LoadScene("Menu Screen");
+        Gameover.color = Color.white;
+        Press.color = new Color(0, 0, 0, 0);
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            SceneManager.LoadScene("Menu Screen");
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            SceneManager.LoadScene("Menu Screen");
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            SceneManager.LoadScene("Menu Screen");
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            SceneManager.LoadScene("Menu Screen");
+        }
     }
 }
