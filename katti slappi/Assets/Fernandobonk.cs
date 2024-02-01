@@ -33,6 +33,25 @@ public class Fernandobonk : MonoBehaviour
         StartCoroutine(Bonking());
 
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            SceneManager.LoadScene("Menu Screen");
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            SceneManager.LoadScene("Menu Screen");
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            SceneManager.LoadScene("Menu Screen");
+        }
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            SceneManager.LoadScene("Menu Screen");
+        }
+    }
     IEnumerator Bonking()
     {
         //Dette trin for Wham visual effekten til at være på skærmen, ændrer spriten til at være i bonket tilstand, og afspiller Bonk Sfx
@@ -65,22 +84,7 @@ public class Fernandobonk : MonoBehaviour
         Camera.transform.Rotate(0, 40, 0);
         Camera.GetComponent<Camera>().backgroundColor = gameovercolor;
         Gameover.color = new Color(1,1,1,1);
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            SceneManager.LoadScene("Menu Screen");
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            SceneManager.LoadScene("Menu Screen");
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            SceneManager.LoadScene("Menu Screen");
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            SceneManager.LoadScene("Menu Screen");
-        }
+
 
 
         yield break;
