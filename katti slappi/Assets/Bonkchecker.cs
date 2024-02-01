@@ -20,7 +20,7 @@ public class Bonkchecker : MonoBehaviour
         if (tag == "Fernando")
         {
             
-            SceneManager.LoadScene("Main Menu");
+            SceneManager.LoadScene("Bonk Scene");
         }
     }
     public void Bonker(float Identifier) 
