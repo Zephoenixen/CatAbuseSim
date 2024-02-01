@@ -247,9 +247,10 @@ public class Katmanager : MonoBehaviour
             Audio.Play();
         }
     }
-    void Score(int Points)
+    public void Score(int Points)
     {
         points += Points;
+        Debug.Log("Points:" + points);
     }
     // Update is called once per frame
     void Update()
