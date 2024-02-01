@@ -238,6 +238,11 @@ public class Katmanager : MonoBehaviour
             cooldown = cooldown-(cooldownSpeeder * (0.00001f));
         }
     }
+
+    void Points()
+    {
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -247,6 +252,8 @@ public class Katmanager : MonoBehaviour
         Spawner();
         //Gør spillet hurtigere og sværere over tid, samt laver scores og highscores
         Progression();
+
+        Points();
     
     }
     
