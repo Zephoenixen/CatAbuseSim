@@ -17,14 +17,23 @@ public class Katmanager : MonoBehaviour
     public GameObject Bernard;
     public GameObject Storemis;
 
-    //CoolDown Manager
+    //Brugt til points og til at ændre spillets hastighed baseret på hvor langt tid man har spillet
+    public int scorepoints;
+    private float timeVar;
+    private float velTime;
+    private float cooldownSpeeder;
+    public float speedScale = 0.15f;
+    public float cooldownScale = 0.05f;
+
+
+    //CoolDown Manager sådan at vi dynamisk kan spawne katte
     public float cooldown = 3f;
     private float nextKat = 1f;
 
-    //
+    // Bliver brugt til at tjekke om der nok positioner
     public float truePasses = 0;
 
-    //
+    // Bevæger Katte op og ned
     public Vector3 Vel = new Vector3(0, 2, 0);
     public Vector3 Bonk = new Vector3(0, -7, 0);
 
@@ -40,16 +49,10 @@ public class Katmanager : MonoBehaviour
     public Rigidbody2D Mirb;
     public Rigidbody2D Berb;
     public Rigidbody2D Strb;
-    //Cooldown sådan at vi ikke har 5 tusinde katte på en gang
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-
-
-
-
-
+        cooldown = 3f;
     }
     // Katmover står for at bevæge kattene ind i de rigtige felter når cooldown er slut
     void KatMover()
@@ -116,10 +119,10 @@ public class Katmanager : MonoBehaviour
                 //Den her advarer om at katmover er i stykker fordi den burde aldrig vælge en randokat større end 3
                 else { Debug.Log("KatMover Broke"); }
             }
-            else
-            {
-                nextKat = Time.time;
-            }
+        }
+        else
+        {
+            nextKat = Time.time;
         }
     }
 
@@ -144,14 +147,12 @@ public class Katmanager : MonoBehaviour
         }
     }
 
+   
 
-    // Update is called once per frame
-    void Update()
+
+    public void Spawner()
     {
-        //Den her tjekker om man trykker på rigtige knap og om der er en kat der før den slår katten i feltet
-        PlayerInteraction();
-
-    if (Time.time > nextKat) 
+        if (Time.time > nextKat)
         {
 
             foreach (bool i in PosAvaliable)
@@ -169,9 +170,11 @@ public class Katmanager : MonoBehaviour
 
         }
     }
+
+    //Den her sætter det positions bool array vædier til false når positionerne bliver tomme sådan at der kan komme nye katte
     public void Posreset(float posreset)
     {
-        if(posreset == -9f)
+        if (posreset == -9f)
         {
             PosAvaliable[0] = true;
         }
@@ -188,12 +191,12 @@ public class Katmanager : MonoBehaviour
             PosAvaliable[3] = true;
         }
     }
+    //Den her sætter det katte bool array vædier til false når katte kommer ud af skærmen sådan at de kan spawne andre steder
     public void Katreset(float katreset)
     {
-        if(katreset == 1)
+        if (katreset == 1)
         {
             KatAvaliable[0] = true;
-            Debug.Log("FERNRESET");
         }
         else if (katreset == 2)
         {
@@ -220,4 +223,31 @@ public class Katmanager : MonoBehaviour
             KatAvaliable[6] = true;
         }
     }
+
+    public void Progression()
+    {
+        timeVar = Time.time * speedScale;
+        cooldownSpeeder = Time.time * cooldownScale;
+        Vel = new Vector3(0, 2 + velTime, 0);
+        if (timeVar < 7) 
+        {
+            velTime = timeVar;
+        }
+        if (cooldown > 0.75f)
+        {
+            cooldown = cooldown-(cooldownSpeeder * (0.00001f));
+        }
+    }
+    // Update is called once per frame
+    void Update()
+    {
+        //Den her tjekker om man trykker på rigtige knap og om der er en kat der før den slår katten i feltet
+        PlayerInteraction();
+        //Den her spawner en spawner en kat efter en bestemt mængde tid
+        Spawner();
+        //Gør spillet hurtigere og sværere over tid, samt laver scores og highscores
+        Progression();
+    
+    }
+    
 }
