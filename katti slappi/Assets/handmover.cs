@@ -4,12 +4,23 @@ using UnityEngine;
 
 public class handmover : MonoBehaviour
 {
-    void handtime()
+    private void Update()
     {
-        transform.position = new Vector3(-0.2f, 1.3f, 0);
-        while (transform.position.z > -15)
+        if (transform.position.z <= -10f)
         {
-            transform.position += new Vector3(0, 0, -0.4f);
+            Rigidbody rb = GetComponent<Rigidbody>();
+            rb.velocity = Vector3.zero;
         }
     }
+    void Handtime()
+    {
+        transform.position += new Vector3(0, -20, 0);
+        Debug.Log("hands");
+        Rigidbody rb = GetComponent<Rigidbody>();
+        rb.velocity = new Vector3(0,0,-4);
+
+            
+        
+    }
 }
+    
