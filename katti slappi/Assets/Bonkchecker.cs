@@ -12,6 +12,8 @@ public class Bonkchecker : MonoBehaviour
     public int Middlerightlane = 3;
     public int bonkvel = -7;
     public Rigidbody2D rb;
+    public SpriteRenderer originalsprite;
+    public SpriteRenderer overridesprite;
     
 
     void bonk()
@@ -19,31 +21,33 @@ public class Bonkchecker : MonoBehaviour
         Debug.Log("BONK");
         rb.velocity = new Vector3(0, bonkvel, 0);
         SendMessageUpwards("Score", Scoreworth);
+        SendMessageUpwards("Sound", "Bonk");
         if (tag == "Fernando")
             {
                 SceneManager.LoadScene("Bonk Scene");
             }
+        StartCoroutine(Bonkedsprite());
     }
     public void Bonker(float Identifier) 
     { 
 
         if(Identifier == 1) 
         { 
-            if (transform.position.x == Leftmostlane)
+            if (transform.position.x == Leftmostlane && transform.position.y >= -10f)
             {
                 bonk();
             }
         }
         else if(Identifier == 2)
         {
-            if(transform.position.x == Middleleftlane)
+            if(transform.position.x == Middleleftlane && transform.position.y >= -10f)
             {
                 bonk();
             }
         }
         else if (Identifier == 3)
         {
-            if(transform.position.x == Middlerightlane)
+            if(transform.position.x == Middlerightlane && transform.position.y >= -10f)
             {
                 bonk();
             }
@@ -51,7 +55,7 @@ public class Bonkchecker : MonoBehaviour
         else if (Identifier == 4)
         {
 
-            if(transform.position.x == Rightmostlane)
+            if(transform.position.x == Rightmostlane && transform.position.y >= -10f)
             {
                 bonk();  
             }
@@ -77,5 +81,12 @@ public class Bonkchecker : MonoBehaviour
             rb.velocity = new Vector2(0, 0);
             transform.position = new Vector2(-10, -10);
         }
+    }
+    IEnumerator Bonkedsprite()
+    {
+        GetComponent<SpriteRenderer>().sprite = overridesprite.sprite;
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<SpriteRenderer>().sprite = originalsprite.sprite;
+        yield return null;
     }
 }

@@ -14,6 +14,11 @@ public class Deathbykat : MonoBehaviour
     {
         StartCoroutine(Cameraflash());
     }
+    void Sound(string sound)
+    {
+
+    }
+
 
     // Update is called once per frame
 IEnumerator Cameraflash()

@@ -16,6 +16,7 @@ public class Katmanager : MonoBehaviour
     public GameObject Milk;
     public GameObject Bernard;
     public GameObject Storemis;
+    AudioSource Audio;
 
     //Brugt til points og til at ændre spillets hastighed baseret på hvor langt tid man har spillet
     public int points;
@@ -53,6 +54,7 @@ public class Katmanager : MonoBehaviour
     private void Start()
     {
         cooldown = 3f;
+        Audio = GetComponent<AudioSource>();
     }
     // Katmover står for at bevæge kattene ind i de rigtige felter når cooldown er slut
     void KatMover()
@@ -236,6 +238,13 @@ public class Katmanager : MonoBehaviour
         }
     }
 
+    public void Sound(string Soundtype)
+    {
+        if(Soundtype == "Bonk")
+        {
+            Audio.Play();
+        }
+    }
     void Score(int Points)
     {
         points += Points;
