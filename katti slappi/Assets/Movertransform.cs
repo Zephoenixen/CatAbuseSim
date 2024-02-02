@@ -15,7 +15,7 @@ public class Movertransform : MonoBehaviour
     {
         if(transform.position.z !<= -15)
         {
-            transform.position += new Vector3(0, 0, 0.01f);
+            transform.position += new Vector3(0, 0, 4f*Time.deltaTime);
         }
     }
 }
