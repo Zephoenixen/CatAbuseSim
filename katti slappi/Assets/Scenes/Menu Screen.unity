@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 316995577}
   - component: {fileID: 316995576}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -422,9 +422,9 @@ GameObject:
   - component: {fileID: 927933069}
   - component: {fileID: 927933068}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: HighScore
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -506,9 +506,9 @@ GameObject:
   - component: {fileID: 1693762244}
   - component: {fileID: 1693762243}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Instruction
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

@@ -17,9 +17,12 @@ public class Katmanager : MonoBehaviour
     public GameObject Bernard;
     public GameObject Storemis;
     AudioSource Audio;
-
-    //Brugt til points og til at ændre spillets hastighed baseret på hvor langt tid man har spillet
+    
+    
     public int points;
+    public ScoreKeeper ScoreKeeper;
+    
+    //Brugt til at ændre spillets hastighed baseret på hvor langt tid man har spillet
     private float timeVar;
     private float velTime;
     private float cooldownSpeeder;
@@ -136,20 +139,25 @@ public class Katmanager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
             BroadcastMessage("Bonker", 1f);
+            SendMessage("Score", -10);
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             BroadcastMessage("Bonker", 2f);
+            SendMessage("Score", -10);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             BroadcastMessage("Bonker", 3f);
+            SendMessage("Score", -10);
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             BroadcastMessage("Bonker", 4f);
+            SendMessage("Score", -10);
         }
     }
+
 
     public void Spawner()
     {
@@ -250,7 +258,7 @@ public class Katmanager : MonoBehaviour
     public void Score(int Points)
     {
         points += Points;
-        Debug.Log("Points:" + points);
+        ScoreKeeper.SendMessage("HighScoreKeeper", points);
     }
     // Update is called once per frame
     void Update()

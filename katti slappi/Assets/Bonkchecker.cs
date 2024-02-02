@@ -14,6 +14,7 @@ public class Bonkchecker : MonoBehaviour
     public Rigidbody2D rb;
     public SpriteRenderer originalsprite;
     public SpriteRenderer overridesprite;
+    public GameObject scoreKeeper;
     
 
     void bonk()
@@ -24,7 +25,8 @@ public class Bonkchecker : MonoBehaviour
         SendMessageUpwards("Sound", "Bonk", SendMessageOptions.DontRequireReceiver);
         if (tag == "Fernando")
             {
-                SceneManager.LoadScene("Bonk Scene");
+            DontDestroyOnLoad(scoreKeeper);
+            SceneManager.LoadScene("Bonk Scene");
             }
         StartCoroutine(Bonkedsprite());
     }
@@ -67,12 +69,13 @@ public class Bonkchecker : MonoBehaviour
     {
         if (CompareTag("Fernando")) 
         { 
-            rb.velocity = new Vector3(0, bonkvel, 0); 
+            rb.velocity = new Vector3(0, bonkvel, 0);
+            SendMessageUpwards("Score", 50);
         }
         else
         {
             if (collision.gameObject.CompareTag("Killbox"))
-                {
+            {
                 SceneManager.LoadScene("Scrath Scene");
             }   
         }
