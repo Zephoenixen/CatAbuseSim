@@ -1306,7 +1306,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1c44ea15b81ace24bbb5cf972b5e9985, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1971,7 +1971,7 @@ GameObject:
   - component: {fileID: 1701565010}
   - component: {fileID: 1701565009}
   m_Layer: 0
-  m_Name: Placeholder for en grafik til collider
+  m_Name: Visual indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

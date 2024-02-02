@@ -63,15 +63,16 @@ public class Fernandobonk : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         Wham.transform.position = new Vector3(-0.82f, 4.44f, -60);
 
-        //Dette trin venter lidt længere for at ændre spriten for at fjerne hammeren, og starter Growl Sfx sådan den spiller i tide til at det giver mening
+        //Dette trin venter lidt længere for at ændre spriten for at fjerne hammeren
         yield return new WaitForSecondsRealtime(1.5f);
         prebonk.sprite = nohammer.sprite;
-        BroadcastMessage("Sound", "Growl");
 
-        //Dette trin venter ligeså langt som det sidste for at ændre sprite til vred tilstand, og sende signal til hænderne at de skal bevæge sig
+
+        //Dette trin venter ligeså langt som det sidste for at ændre sprite til vred tilstand, og starter Growl Sfx, og sende signal til hænderne at de skal bevæge sig
         yield return new WaitForSeconds(1.5f);
         prebonk.sprite = amgry.sprite;
-        
+        BroadcastMessage("Sound", "Growl");
+
         BroadcastMessage("Handtime",SendMessageOptions.DontRequireReceiver);
 
         //Dette trin vænter indtil hænderne stopper og rotere cameraet sådan det ligner din nak bliver brækket og spiller Snap sfx

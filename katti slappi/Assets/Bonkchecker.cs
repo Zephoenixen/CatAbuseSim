@@ -20,8 +20,8 @@ public class Bonkchecker : MonoBehaviour
     {
         Debug.Log("BONK");
         rb.velocity = new Vector3(0, bonkvel, 0);
-        SendMessageUpwards("Score", Scoreworth);
-        SendMessageUpwards("Sound", "Bonk");
+        SendMessageUpwards("Score", Scoreworth, SendMessageOptions.DontRequireReceiver);
+        SendMessageUpwards("Sound", "Bonk", SendMessageOptions.DontRequireReceiver);
         if (tag == "Fernando")
             {
                 SceneManager.LoadScene("Bonk Scene");
