@@ -238,13 +238,13 @@ public class Katmanager : MonoBehaviour
         timeVar = Time.time * speedScale;
         cooldownSpeeder = Time.time * cooldownScale;
         Vel = new Vector3(0, 2 + velTime, 0);
-        if (timeVar < 7) 
+        if (timeVar < 9) 
         {
             velTime = timeVar;
         }
-        if (cooldown > 0.75f)
+        if (cooldown > 0.55f)
         {
-            cooldown = cooldown-(cooldownSpeeder * (0.00001f));
+            cooldown = cooldown-(cooldownSpeeder * (0.00008f));
         }
     }
 
