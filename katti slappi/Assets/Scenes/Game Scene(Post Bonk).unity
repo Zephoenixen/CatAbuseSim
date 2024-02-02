@@ -4101,7 +4101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scoreworth: -200
+  Scoreworth: 0
   Leftmostlane: -9
   Rightmostlane: 9
   Middleleftlane: -3
