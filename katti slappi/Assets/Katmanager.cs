@@ -258,6 +258,9 @@ public class Katmanager : MonoBehaviour
     public void Score(int Points)
     {
         points += Points;
+
+        PlayerPrefs.SetInt("PlayerScore", points);
+
         if (points > PlayerPrefs.GetInt("HighScore", 0))
         {
             PlayerPrefs.SetInt("HighScore", points);
