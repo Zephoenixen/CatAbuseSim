@@ -258,7 +258,10 @@ public class Katmanager : MonoBehaviour
     public void Score(int Points)
     {
         points += Points;
-        ScoreKeeper.SendMessage("HighScoreKeeper", points);
+        if (points > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", points);
+        }
     }
     // Update is called once per frame
     void Update()

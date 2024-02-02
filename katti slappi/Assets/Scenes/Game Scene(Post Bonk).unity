@@ -1336,7 +1336,7 @@ MonoBehaviour:
   Bernard: {fileID: 5198858255349525708}
   Storemis: {fileID: 5198858255908146921}
   points: 0
-  ScoreKeeper: {fileID: 1135910117}
+  ScoreKeeper: {fileID: 0}
   speedScale: 0.15
   cooldownScale: 0.05
   cooldown: 3
@@ -1674,50 +1674,6 @@ Transform:
   m_Children:
   - {fileID: 1030111997}
   - {fileID: 1919163890}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1135910116
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1135910118}
-  - component: {fileID: 1135910117}
-  m_Layer: 0
-  m_Name: Score Keeper
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1135910117
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135910116}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9423be75174062b499ca6b2f199060b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1135910118
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135910116}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.4710569, y: -6.805245, z: 2.7982872}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1201649950
@@ -3139,7 +3095,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!50 &2218444554414995341
 Rigidbody2D:
   serializedVersion: 4
@@ -3166,7 +3122,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!50 &2218444554465083688
 Rigidbody2D:
   serializedVersion: 4
@@ -3193,7 +3149,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!50 &2218444554896319245
 Rigidbody2D:
   serializedVersion: 4
@@ -3220,7 +3176,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!50 &2218444555486516544
 Rigidbody2D:
   serializedVersion: 4
@@ -3247,7 +3203,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!50 &2218444556311966123
 Rigidbody2D:
   serializedVersion: 4
@@ -3274,7 +3230,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &3072223853856568899
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3885,7 +3841,7 @@ MonoBehaviour:
   rb: {fileID: 1326808841049877172}
   originalsprite: {fileID: 201600951}
   overridesprite: {fileID: 275329783}
-  scoreKeeper: {fileID: 1135910116}
+  scoreKeeper: {fileID: 0}
 --- !u!1 &6356427011199994755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3932,7 +3888,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &6832559462966075948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3954,7 +3910,7 @@ MonoBehaviour:
   rb: {fileID: 2218444554896319245}
   originalsprite: {fileID: 1286058522}
   overridesprite: {fileID: 1580349568}
-  scoreKeeper: {fileID: 1135910116}
+  scoreKeeper: {fileID: 0}
 --- !u!114 &6832559463545910956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3976,7 +3932,7 @@ MonoBehaviour:
   rb: {fileID: 2218444554414995341}
   originalsprite: {fileID: 1452031563}
   overridesprite: {fileID: 659193804}
-  scoreKeeper: {fileID: 1135910116}
+  scoreKeeper: {fileID: 0}
 --- !u!114 &6832559463596523529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3998,7 +3954,7 @@ MonoBehaviour:
   rb: {fileID: 2218444554465083688}
   originalsprite: {fileID: 925148264}
   overridesprite: {fileID: 1702735080}
-  scoreKeeper: {fileID: 1135910116}
+  scoreKeeper: {fileID: 0}
 --- !u!114 &6832559463832137866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4020,7 +3976,7 @@ MonoBehaviour:
   rb: {fileID: 2218444556311966123}
   originalsprite: {fileID: 1841825457}
   overridesprite: {fileID: 879715407}
-  scoreKeeper: {fileID: 1135910116}
+  scoreKeeper: {fileID: 0}
 --- !u!114 &6832559464613237857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4042,7 +3998,7 @@ MonoBehaviour:
   rb: {fileID: 2218444555486516544}
   originalsprite: {fileID: 1030111998}
   overridesprite: {fileID: 1919163891}
-  scoreKeeper: {fileID: 1135910116}
+  scoreKeeper: {fileID: 0}
 --- !u!4 &7573579213653064276
 Transform:
   m_ObjectHideFlags: 0
@@ -4154,12 +4110,11 @@ MonoBehaviour:
   rb: {fileID: 6652480929898593093}
   originalsprite: {fileID: 1248834945}
   overridesprite: {fileID: 1051670489}
-  scoreKeeper: {fileID: 1135910116}
+  scoreKeeper: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1135910118}
   - {fileID: 519420032}
   - {fileID: 574925289}
   - {fileID: 1873032788}

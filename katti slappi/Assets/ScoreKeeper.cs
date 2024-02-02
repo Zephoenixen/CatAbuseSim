@@ -1,24 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ScoreKeeper : MonoBehaviour
 {
-    int scoretoShow;
-    public void HighScoreKeeper(int highScore)
+    public Text highScore;
+    
+    private void Awake()
     {
-        
-        DontDestroyOnLoad(gameObject);
-        
-        if (highScore > scoretoShow) 
-        {
-            scoretoShow = highScore;
-        }
-    }
-
-    private void Update()
-    {
-        print(scoretoShow);
+        highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 }
