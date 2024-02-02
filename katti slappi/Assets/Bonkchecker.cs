@@ -25,7 +25,6 @@ public class Bonkchecker : MonoBehaviour
         SendMessageUpwards("Sound", "Bonk", SendMessageOptions.DontRequireReceiver);
         if (tag == "Fernando")
             {
-            DontDestroyOnLoad(scoreKeeper);
             SceneManager.LoadScene("Bonk Scene");
             }
         StartCoroutine(Bonkedsprite());
