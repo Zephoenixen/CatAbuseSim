@@ -244,7 +244,7 @@ public class Katmanager : MonoBehaviour
         }
         if (cooldown > 0.55f)
         {
-            cooldown = cooldown-(cooldownSpeeder * (0.00008f));
+            cooldown = cooldown-(cooldownSpeeder * (0.00001f));
         }
     }
 
