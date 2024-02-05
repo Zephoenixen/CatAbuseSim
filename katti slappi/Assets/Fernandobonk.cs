@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Fernandobonk : MonoBehaviour
 {
+    bool cutscenedone;
     // Sprites der bliver skiftet imellem
     public SpriteRenderer prebonk;
     public SpriteRenderer postbonk;
@@ -32,25 +33,6 @@ public class Fernandobonk : MonoBehaviour
 
         StartCoroutine(Bonking());
 
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            SceneManager.LoadScene("Menu Screen");
-        }
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            SceneManager.LoadScene("Menu Screen");
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            SceneManager.LoadScene("Menu Screen");
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            SceneManager.LoadScene("Menu Screen");
-        }
     }
     IEnumerator Bonking()
     {
@@ -85,6 +67,9 @@ public class Fernandobonk : MonoBehaviour
         Camera.transform.Rotate(0, 40, 0);
         Camera.GetComponent<Camera>().backgroundColor = gameovercolor;
         Gameover.color = new Color(1,1,1,1);
+
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Menu Screen");
 
 
 

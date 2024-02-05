@@ -75,7 +75,7 @@ public class Bonkchecker : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Killbox"))
             {
-                SceneManager.LoadScene("Scrath Scene");
+                SceneManager.LoadScene("Scratch Scene");
             }   
         }
         if (collision.gameObject.CompareTag("triggerBox"))
