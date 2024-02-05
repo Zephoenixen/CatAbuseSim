@@ -76,7 +76,7 @@ public class Katmanager : MonoBehaviour
                 PosAvaliable[RandoPos] = false;
                 KatAvaliable[RandoKat] = false;
                 //Gør at der går (cooldown) mængde tid til den næste kat spawner
-                nextKat = Time.time + cooldown;
+                nextKat = Time.timeSinceLevelLoad + cooldown;
                 //Debuglog for at tjekke det virker
                 Debug.Log("bev�gelse");
                 //De her 4 felter står for at rykke dem og give dem velocitet sådan de går op
@@ -129,7 +129,7 @@ public class Katmanager : MonoBehaviour
         else
         {
             //gør at den prøver at finde en kat i tick'et efter
-            nextKat = Time.time;
+            nextKat = Time.timeSinceLevelLoad;
         }
     }
 
@@ -161,7 +161,7 @@ public class Katmanager : MonoBehaviour
 
     public void Spawner()
     {
-        if (Time.time > nextKat)
+        if (Time.timeSinceLevelLoad > nextKat)
         {
 
             foreach (bool i in PosAvaliable)
@@ -235,8 +235,8 @@ public class Katmanager : MonoBehaviour
 
     public void Progression()
     {
-        timeVar = Time.time * speedScale;
-        cooldownSpeeder = Time.time * cooldownScale;
+        timeVar = Time.timeSinceLevelLoad * speedScale;
+        cooldownSpeeder = Time.timeSinceLevelLoad * cooldownScale;
         Vel = new Vector3(0, 2 + velTime, 0);
         if (timeVar < 9) 
         {

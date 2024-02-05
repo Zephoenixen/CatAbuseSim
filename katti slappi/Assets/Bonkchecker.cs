@@ -15,12 +15,13 @@ public class Bonkchecker : MonoBehaviour
     public SpriteRenderer originalsprite;
     public SpriteRenderer overridesprite;
     public GameObject scoreKeeper;
+    public Katmanager Katmanager;
     
 
     void bonk()
     {
         Debug.Log("BONK");
-        rb.velocity = new Vector3(0, bonkvel, 0);
+        rb.velocity = new Vector3(0, (2+Katmanager.Vel.y)*-1.5f, 0);
         SendMessageUpwards("Score", Scoreworth, SendMessageOptions.DontRequireReceiver);
         SendMessageUpwards("Sound", "Bonk", SendMessageOptions.DontRequireReceiver);
         if (tag == "Fernando")
@@ -68,7 +69,7 @@ public class Bonkchecker : MonoBehaviour
     {
         if (CompareTag("Fernando")) 
         { 
-            rb.velocity = new Vector3(0, bonkvel, 0);
+            rb.velocity = new Vector3(0, (2f+Katmanager.Vel.y) * -1.5f,0);
             SendMessageUpwards("Score", 50);
         }
         else

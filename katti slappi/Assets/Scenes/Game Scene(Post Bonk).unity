@@ -3842,6 +3842,7 @@ MonoBehaviour:
   originalsprite: {fileID: 201600951}
   overridesprite: {fileID: 275329783}
   scoreKeeper: {fileID: 0}
+  Katmanager: {fileID: 932180866}
 --- !u!1 &6356427011199994755
 GameObject:
   m_ObjectHideFlags: 0
@@ -3911,6 +3912,7 @@ MonoBehaviour:
   originalsprite: {fileID: 1286058522}
   overridesprite: {fileID: 1580349568}
   scoreKeeper: {fileID: 0}
+  Katmanager: {fileID: 932180866}
 --- !u!114 &6832559463545910956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3933,6 +3935,7 @@ MonoBehaviour:
   originalsprite: {fileID: 1452031563}
   overridesprite: {fileID: 659193804}
   scoreKeeper: {fileID: 0}
+  Katmanager: {fileID: 932180866}
 --- !u!114 &6832559463596523529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3955,6 +3958,7 @@ MonoBehaviour:
   originalsprite: {fileID: 925148264}
   overridesprite: {fileID: 1702735080}
   scoreKeeper: {fileID: 0}
+  Katmanager: {fileID: 932180866}
 --- !u!114 &6832559463832137866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3977,6 +3981,7 @@ MonoBehaviour:
   originalsprite: {fileID: 1841825457}
   overridesprite: {fileID: 879715407}
   scoreKeeper: {fileID: 0}
+  Katmanager: {fileID: 932180866}
 --- !u!114 &6832559464613237857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3999,6 +4004,7 @@ MonoBehaviour:
   originalsprite: {fileID: 1030111998}
   overridesprite: {fileID: 1919163891}
   scoreKeeper: {fileID: 0}
+  Katmanager: {fileID: 932180866}
 --- !u!4 &7573579213653064276
 Transform:
   m_ObjectHideFlags: 0
@@ -4111,6 +4117,7 @@ MonoBehaviour:
   originalsprite: {fileID: 1248834945}
   overridesprite: {fileID: 1051670489}
   scoreKeeper: {fileID: 0}
+  Katmanager: {fileID: 932180866}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
