@@ -1635,8 +1635,8 @@ MonoBehaviour:
   Storemis: {fileID: 5198858255908146921}
   points: 0
   ScoreKeeper: {fileID: 0}
-  speedScale: 0.05
-  cooldownScale: 0.2
+  speedScale: 0.15
+  cooldownScale: 0.4
   cooldown: 3
   truePasses: 0
   Vel: {x: 0, y: 2, z: 0}

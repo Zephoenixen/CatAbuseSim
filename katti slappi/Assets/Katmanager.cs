@@ -138,23 +138,23 @@ public class Katmanager : MonoBehaviour
         //Input Manager
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            BroadcastMessage("Bonker", 1f);
             SendMessage("Score", -10);
+            BroadcastMessage("Bonker", 1f);
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            BroadcastMessage("Bonker", 2f);
             SendMessage("Score", -10);
+            BroadcastMessage("Bonker", 2f);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            BroadcastMessage("Bonker", 3f);
             SendMessage("Score", -10);
+            BroadcastMessage("Bonker", 3f);
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            BroadcastMessage("Bonker", 4f);
             SendMessage("Score", -10);
+            BroadcastMessage("Bonker", 4f);
         }
     }
 
@@ -276,8 +276,6 @@ public class Katmanager : MonoBehaviour
         //Gør spillet hurtigere og sværere over tid, samt laver scores og highscores
         Progression();
 
-
-    
     }
     
 }
