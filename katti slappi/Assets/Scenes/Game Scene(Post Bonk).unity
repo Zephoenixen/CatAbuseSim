@@ -1640,7 +1640,7 @@ MonoBehaviour:
   cooldown: 3
   truePasses: 0
   Vel: {x: 0, y: 2, z: 0}
-  Bonk: {x: 0, y: -7, z: 0}
+  Bonk: {x: 0, y: -10, z: 0}
   PosAvaliable: 01010101
   Pos: f7fffffffdffffff0300000009000000
   KatAvaliable: 01010101010101

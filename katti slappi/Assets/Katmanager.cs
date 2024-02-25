@@ -242,7 +242,7 @@ public class Katmanager : MonoBehaviour
         {
             velTime = timeVar;
         }
-        if (cooldown > 0.55f)
+        if (cooldown > 0.45f)
         {
             cooldown = cooldown-(cooldownSpeeder * (0.00001f));
         }
