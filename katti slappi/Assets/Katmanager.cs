@@ -84,43 +84,44 @@ public class Katmanager : MonoBehaviour
                 {
                     Fernando.transform.position = new Vector2(Pos[RandoPos], -9);
                     Ferb.velocity = Vel;
+                    Fernando.SendMessage("Checkbonk", true);
 
                 }
                 else if (RandoKat == 1)
                 {
                     Ost.transform.position = new Vector2(Pos[RandoPos], -9);
                     Osrb.velocity = Vel;
-
+                    Ost.SendMessage("Checkbonk", true);
                 }
                 else if (RandoKat == 2)
                 {
                     Patooty.transform.position = new Vector2(Pos[RandoPos], -9);
                     Parb.velocity = Vel;
-
+                    Patooty.SendMessage("Checkbonk", true);
                 }
                 else if (RandoKat == 3)
                 {
                     Kattemad.transform.position = new Vector2(Pos[RandoPos], -9);
                     Karb.velocity = Vel;
-
+                    Kattemad.SendMessage("Checkbonk", true);
                 }
                 else if (RandoKat == 4)
                 {
                     Milk.transform.position = new Vector2(Pos[RandoPos], -9);
                     Mirb.velocity = Vel;
-
+                    Milk.SendMessage("Checkbonk", true);
                 }
                 else if (RandoKat == 5)
                 {
                     Bernard.transform.position = new Vector2(Pos[RandoPos], -9);
                     Berb.velocity = Vel;
-
+                    Bernard.SendMessage("Checkbonk", true);
                 }
                 else if (RandoKat == 6)
                 {
                     Storemis.transform.position = new Vector2(Pos[RandoPos], -9);
                     Strb.velocity = Vel;
-
+                    Storemis.SendMessage("Checkbonk", true);
                 }
                 //Den her advarer om at katmover er i stykker fordi den burde aldrig vælge en randokat større end 3
                 else { Debug.Log("KatMover Broke"); }
