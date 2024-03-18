@@ -139,22 +139,18 @@ public class Katmanager : MonoBehaviour
         //Input Manager
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            SendMessage("Score", -10);
             BroadcastMessage("Bonker", 1f);
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            SendMessage("Score", -10);
             BroadcastMessage("Bonker", 2f);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            SendMessage("Score", -10);
             BroadcastMessage("Bonker", 3f);
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            SendMessage("Score", -10);
             BroadcastMessage("Bonker", 4f);
         }
     }
@@ -239,6 +235,7 @@ public class Katmanager : MonoBehaviour
         timeVar = Time.timeSinceLevelLoad * speedScale;
         cooldownSpeeder = Time.timeSinceLevelLoad * cooldownScale;
         Vel = new Vector3(0, 2 + velTime, 0);
+        
         if (timeVar < 9) 
         {
             velTime = timeVar;
