@@ -4,5 +4,17 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu Screen.unity
+    guid: 35bcf1fefc34daf40a1f2a098bdceaac
+  - enabled: 1
+    path: Assets/Scenes/Game Scene(Post Bonk).unity
+    guid: e4c13f907f4bf8344b5f661f07d067d4
+  - enabled: 1
+    path: Assets/Scenes/Scratch Scene.unity
+    guid: 45e44d7f4a53b4f45801f9ea9d5f1674
+  - enabled: 1
+    path: Assets/Scenes/Bonk Scene.unity
+    guid: ea0b9c424c4ba4d4291cd4509b3d04ac
   m_configObjects: {}
