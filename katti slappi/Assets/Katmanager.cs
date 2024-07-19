@@ -65,12 +65,21 @@ public class Katmanager : MonoBehaviour
         //Position randomizer gør at den prøver at vælge tilfældige felter
         int RandoPos = Random.Range(0, Pos.Length);
         //Tjekker om feltet er åbent
-        if ((PosAvaliable[RandoPos] == true))
+        if (!PosAvaliable[RandoPos] == true)
+        {
+            //gør at den prøver at finde en kat i tick'et efter
+            nextKat = Time.timeSinceLevelLoad;
+        }
+        else
         {
             //Kat randomizer er Position randomizer men for kattene
             int RandoKat = Random.Range(0, KatAvaliable.Length);
             //Tjekker om katten er i brug
-            if ((KatAvaliable[RandoKat] == true))
+            if (!KatAvaliable[RandoKat] == true)
+            {
+                return;
+            }
+            else
             {
                 //Både Kat og Pos avaliable bliver slået fra sådan både felt og kat er i brug
                 PosAvaliable[RandoPos] = false;
@@ -78,59 +87,47 @@ public class Katmanager : MonoBehaviour
                 //Gør at der går (cooldown) mængde tid til den næste kat spawner
                 nextKat = Time.timeSinceLevelLoad + cooldown;
                 //Debuglog for at tjekke det virker
-                Debug.Log("bev�gelse");
+                //Debug.Log("bevaegelse");
                 //De her 4 felter står for at rykke dem og give dem velocitet sådan de går op
-                if (RandoKat == 0)
+                switch (RandoKat)
                 {
-                    Fernando.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Ferb.velocity = Vel;
-                    Fernando.SendMessage("Checkbonk", true);
-
+                    case 0:
+                        Fernando.transform.position = new Vector2(Pos[RandoPos], -9);
+                        Ferb.velocity = Vel;
+                        Fernando.SendMessage("Checkbonk", true);
+                        break;
+                    case 1:
+                        Ost.transform.position = new Vector2(Pos[RandoPos], -9);
+                        Osrb.velocity = Vel;
+                        Ost.SendMessage("Checkbonk", true);
+                        break;
+                    case 2:
+                        Patooty.transform.position = new Vector2(Pos[RandoPos], -9);
+                        Parb.velocity = Vel;
+                        Patooty.SendMessage("Checkbonk", true);
+                        break;
+                    case 3:
+                        Kattemad.transform.position = new Vector2(Pos[RandoPos], -9);
+                        Karb.velocity = Vel;
+                        Kattemad.SendMessage("Checkbonk", true);
+                        break;
+                    case 4:
+                        Milk.transform.position = new Vector2(Pos[RandoPos], -9);
+                        Mirb.velocity = Vel;
+                        Milk.SendMessage("Checkbonk", true);
+                        break;
+                    case 5:
+                        Bernard.transform.position = new Vector2(Pos[RandoPos], -9);
+                        Berb.velocity = Vel;
+                        Bernard.SendMessage("Checkbonk", true);
+                        break;
+                    case 6:
+                        Storemis.transform.position = new Vector2(Pos[RandoPos], -9);
+                        Strb.velocity = Vel;
+                        Storemis.SendMessage("Checkbonk", true);
+                        break;
                 }
-                else if (RandoKat == 1)
-                {
-                    Ost.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Osrb.velocity = Vel;
-                    Ost.SendMessage("Checkbonk", true);
-                }
-                else if (RandoKat == 2)
-                {
-                    Patooty.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Parb.velocity = Vel;
-                    Patooty.SendMessage("Checkbonk", true);
-                }
-                else if (RandoKat == 3)
-                {
-                    Kattemad.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Karb.velocity = Vel;
-                    Kattemad.SendMessage("Checkbonk", true);
-                }
-                else if (RandoKat == 4)
-                {
-                    Milk.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Mirb.velocity = Vel;
-                    Milk.SendMessage("Checkbonk", true);
-                }
-                else if (RandoKat == 5)
-                {
-                    Bernard.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Berb.velocity = Vel;
-                    Bernard.SendMessage("Checkbonk", true);
-                }
-                else if (RandoKat == 6)
-                {
-                    Storemis.transform.position = new Vector2(Pos[RandoPos], -9);
-                    Strb.velocity = Vel;
-                    Storemis.SendMessage("Checkbonk", true);
-                }
-                //Den her advarer om at katmover er i stykker fordi den burde aldrig vælge en randokat større end 3
-                else { Debug.Log("KatMover Broke"); }
             }
-        }
-        else
-        {
-            //gør at den prøver at finde en kat i tick'et efter
-            nextKat = Time.timeSinceLevelLoad;
         }
     }
 
@@ -177,57 +174,53 @@ public class Katmanager : MonoBehaviour
         }
     }
 
-    //Den her sætter det positions bool array vædier til false når positionerne bliver tomme sådan at der kan komme nye katte
-    public void Posreset(float posreset)
+    //Den her sætter det positions bool array vædier til false når positionerne bliver tomme sådan at der kan komme nye katte, får sin info fra Checkbox
+    public void Posreset(int posreset)
     {
-        if (posreset == -9f)
+        switch (posreset)
         {
-            PosAvaliable[0] = true;
-        }
-        else if (posreset == -3f)
-        {
-            PosAvaliable[1] = true;
-        }
-        else if (posreset == 3f)
-        {
-            PosAvaliable[2] = true;
-        }
-        else if (posreset == 9f)
-        {
-            PosAvaliable[3] = true;
+            case 1:
+                PosAvaliable[0] = true;
+                break;
+            case 2:
+                PosAvaliable[1] = true;
+                break;
+            case 3:
+                PosAvaliable[2] = true;
+                break;
+            case 4:
+                PosAvaliable[3] = true;
+                break;
         }
     }
     //Den her sætter det katte bool array vædier til false når katte kommer ud af skærmen sådan at de kan spawne andre steder
     public void Katreset(float katreset)
     {
-        if (katreset == 1)
+        switch (katreset)
         {
-            KatAvaliable[0] = true;
+            case 1:
+                KatAvaliable[0] = true;
+                break;
+            case 2:
+                KatAvaliable[1] = true;
+                break;
+            case 3:
+                KatAvaliable[2] = true;
+                break;
+            case 4:
+                KatAvaliable[3] = true;
+                break;
+            case 5:
+                KatAvaliable[4] = true;
+                break;
+            case 6:
+                KatAvaliable[5] = true;
+                break;
+            case 7:
+                KatAvaliable[6] = true;
+                break;
         }
-        else if (katreset == 2)
-        {
-            KatAvaliable[1] = true;
-        }
-        else if (katreset == 3)
-        {
-            KatAvaliable[2] = true;
-        }
-        else if (katreset == 4)
-        {
-            KatAvaliable[3] = true;
-        }
-        else if (katreset == 5)
-        {
-            KatAvaliable[4] = true;
-        }
-        else if (katreset == 6)
-        {
-            KatAvaliable[5] = true;
-        }
-        else if (katreset == 7)
-        {
-            KatAvaliable[6] = true;
-        }
+
     }
 
     public void Progression()

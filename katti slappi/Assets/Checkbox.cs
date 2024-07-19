@@ -4,53 +4,56 @@ using UnityEngine;
 
 public class Checkbox : MonoBehaviour
 {
+    void laneReset()
+    {
+        switch (transform.position.x)
+        {
+            case -9:
+                SendMessageUpwards("Posreset", 1);
+                break;
+            case -3:
+                SendMessageUpwards("Posreset", 2);
+                break;
+            case 3:
+                SendMessageUpwards("Posreset", 3);
+                break;
+            case 9:
+                SendMessageUpwards("Posreset", 4);
+                break;
+        }
+    }
+    void katReset(Collider2D collision)
+    {
+        switch(collision.gameObject.name)
+        {
+            case "Fernando":
+                SendMessageUpwards("Katreset", 1f);
+                break;
+            case "Ost":
+                SendMessageUpwards("Katreset", 2f);
+                break;
+            case "Kattemad":
+                SendMessageUpwards("Katreset", 3f);
+                break;
+            case "Patooty":
+                SendMessageUpwards("Katreset", 4f);
+                break;
+            case "Milk":
+                SendMessageUpwards("Katreset", 5f);
+                break;
+            case "Bernard":
+                SendMessageUpwards("Katreset", 6f);
+                break;
+            case "Storemis":
+                SendMessageUpwards("Katreset", 7f);
+                break;
+        }
 
+    }
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(transform.position.x == -9)
-        {
-            SendMessageUpwards("Posreset", -9f);
-        }
-        else if (transform.position.x == -3)
-        {
-            SendMessageUpwards("Posreset", -3f);
-        }
-        else if (transform.position.x == 3)
-        {
-            SendMessageUpwards("Posreset", 3f);
-        }
-        else if (transform.position.x == 9)
-        {
-            SendMessageUpwards("Posreset", 9f);
-        }
-        if (collision.gameObject.CompareTag("Fernando")) 
-        { 
-            SendMessageUpwards("Katreset", 1f);
-        }
-        else if (collision.gameObject.CompareTag("Ost"))
-        {
-            SendMessageUpwards("Katreset", 2f);
-        }
-        else if (collision.gameObject.CompareTag("Patooty"))
-        {
-            SendMessageUpwards("Katreset", 3f);
-        }
-        else if (collision.gameObject.CompareTag("Kattemad"))
-        {
-            SendMessageUpwards("Katreset", 4f);
-        }
-        else if (collision.gameObject.CompareTag("Milk"))
-        {
-            SendMessageUpwards("Katreset", 5f);
-        }
-        else if (collision.gameObject.CompareTag("Bernard"))
-        {
-            SendMessageUpwards("Katreset", 6f);
-        }
-        else if (collision.gameObject.CompareTag("Storemis"))
-        {
-            SendMessageUpwards("Katreset", 7f);
-        }
+        laneReset();
+        katReset(collision);
     }
 }

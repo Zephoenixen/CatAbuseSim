@@ -6,17 +6,23 @@ using UnityEngine.SceneManagement;
 public class Bonkchecker : MonoBehaviour
 {
     public bool bonked = false;
+
     public int Scoreworth = 1;
+
     public int Leftmostlane = -9;
     public int Rightmostlane = 9;
     public int Middleleftlane = -3;
     public int Middlerightlane = 3;
+
     public int bonkvel = -7;
+
     public Rigidbody2D rb;
     public SpriteRenderer originalsprite;
     public SpriteRenderer overridesprite;
     public GameObject scoreKeeper;
     public Katmanager Katmanager;
+
+    public int physTagCompare = 0;
 
     void Checkbonk(bool State)
     {
@@ -28,70 +34,87 @@ public class Bonkchecker : MonoBehaviour
     void bonk()
     {
         bonked=true;
-        Debug.Log("BONK");
         rb.velocity = new Vector3(0, (2+Katmanager.Vel.y)*-1.5f, 0);
-        SendMessageUpwards("Score", Scoreworth, SendMessageOptions.DontRequireReceiver);
-        SendMessageUpwards("Sound", "Bonk", SendMessageOptions.DontRequireReceiver);
+        SendMessageUpwards("Score", Scoreworth);
+        SendMessageUpwards("Sound", "Bonk");
+        StartCoroutine(Bonkedsprite());
         if (tag == "Fernando")
             {
             SceneManager.LoadScene("Bonk Scene");
             }
-        StartCoroutine(Bonkedsprite());
+
     }
     public void Bonker(float Identifier) 
     { 
-
-        if(Identifier == 1 && bonked==false) 
-        { 
-            if (transform.position.x == Leftmostlane && transform.position.y >= -10f)
+        if(!bonked)
+            switch (Identifier)
             {
-                bonk();
+                case 1:
+                    if (transform.position.x == Leftmostlane)
+                    {
+                        bonk();
+                    }
+                    break;
+                case 2:
+                    if (transform.position.x == Middleleftlane)
+                    {
+                        bonk();
+                    }
+                    break;
+                case 3:
+                    if (transform.position.x == Middlerightlane)
+                    {
+                        bonk();
+                    }
+                    break;
+                case 4:
+                    if (transform.position.x == Rightmostlane)
+                    {
+                        bonk();
+                    }
+                    break;
             }
-        }
-        else if(Identifier == 2 && bonked == false)
-        {
-            if(transform.position.x == Middleleftlane && transform.position.y >= -10f)
-            {
-                bonk();
-            }
-        }
-        else if (Identifier == 3 && bonked == false)
-        {
-            if(transform.position.x == Middlerightlane && transform.position.y >= -10f)
-            {
-                bonk();
-            }
-        }
-        else if (Identifier == 4 && bonked == false)
-        {
-
-            if(transform.position.x == Rightmostlane && transform.position.y >= -10f)
-            {
-                bonk();  
-            }
-        }
     }
 
-   
+   void collisionSwitch()
+    {
+        switch (physTagCompare)
+        {
+            case 0:
+                Debug.Log("Collision tag not detected");
+                break;
+            case 1:
+                rb.velocity = new Vector3(0, (2f + Katmanager.Vel.y) * -1.5f, 0);
+                SendMessageUpwards("Score", 50);
+                physTagCompare = 0;
+                break;
+            case 2:
+                SceneManager.LoadScene("Scratch Scene");
+                physTagCompare = 0;
+                break;
+            case 3:
+                rb.velocity = new Vector2(0, 0);
+                transform.position = new Vector2(-10, -10);
+                physTagCompare = 0;
+                break;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (CompareTag("Fernando")) 
-        { 
-            rb.velocity = new Vector3(0, (2f+Katmanager.Vel.y) * -1.5f,0);
-            SendMessageUpwards("Score", 50);
-        }
-        else
-        {
-            if (collision.gameObject.CompareTag("Killbox"))
-            {
-                SceneManager.LoadScene("Scratch Scene");
-            }   
-        }
         if (collision.gameObject.CompareTag("triggerBox"))
         {
-            rb.velocity = new Vector2(0, 0);
-            transform.position = new Vector2(-10, -10);
+            physTagCompare = 3;
         }
+        else if (CompareTag("Fernando"))
+        {
+            physTagCompare = 1;
+        }
+        else if (collision.gameObject.CompareTag("Killbox"))
+        {
+            physTagCompare = 2;
+        }
+        collisionSwitch();
+
     }
     IEnumerator Bonkedsprite()
     {

@@ -4333,7 +4333,7 @@ GameObject:
   - component: {fileID: 8236767778899708604}
   - component: {fileID: 4893344890475986383}
   m_Layer: 0
-  m_Name: Ferrrrnando
+  m_Name: Fernando
   m_TagString: Fernando
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4371,6 +4371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonked: 0
   Scoreworth: 100
   Leftmostlane: -9
   Rightmostlane: 9
@@ -4382,6 +4383,7 @@ MonoBehaviour:
   overridesprite: {fileID: 275329783}
   scoreKeeper: {fileID: 0}
   Katmanager: {fileID: 932180866}
+  physTagCompare: 0
 --- !u!1 &6356427011199994755
 GameObject:
   m_ObjectHideFlags: 0
@@ -4441,6 +4443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonked: 0
   Scoreworth: 100
   Leftmostlane: -9
   Rightmostlane: 9
@@ -4452,6 +4455,7 @@ MonoBehaviour:
   overridesprite: {fileID: 1580349568}
   scoreKeeper: {fileID: 0}
   Katmanager: {fileID: 932180866}
+  physTagCompare: 0
 --- !u!114 &6832559463545910956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4464,6 +4468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonked: 0
   Scoreworth: 100
   Leftmostlane: -9
   Rightmostlane: 9
@@ -4475,6 +4480,7 @@ MonoBehaviour:
   overridesprite: {fileID: 659193804}
   scoreKeeper: {fileID: 0}
   Katmanager: {fileID: 932180866}
+  physTagCompare: 0
 --- !u!114 &6832559463596523529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4487,6 +4493,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonked: 0
   Scoreworth: 100
   Leftmostlane: -9
   Rightmostlane: 9
@@ -4498,6 +4505,7 @@ MonoBehaviour:
   overridesprite: {fileID: 1702735080}
   scoreKeeper: {fileID: 0}
   Katmanager: {fileID: 932180866}
+  physTagCompare: 0
 --- !u!114 &6832559463832137866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4510,6 +4518,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonked: 0
   Scoreworth: 100
   Leftmostlane: -9
   Rightmostlane: 9
@@ -4521,6 +4530,7 @@ MonoBehaviour:
   overridesprite: {fileID: 879715407}
   scoreKeeper: {fileID: 0}
   Katmanager: {fileID: 932180866}
+  physTagCompare: 0
 --- !u!114 &6832559464613237857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4533,6 +4543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonked: 0
   Scoreworth: 100
   Leftmostlane: -9
   Rightmostlane: 9
@@ -4544,6 +4555,7 @@ MonoBehaviour:
   overridesprite: {fileID: 1919163891}
   scoreKeeper: {fileID: 0}
   Katmanager: {fileID: 932180866}
+  physTagCompare: 0
 --- !u!4 &7573579213653064276
 Transform:
   m_ObjectHideFlags: 0
@@ -4646,6 +4658,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7f6d61ddc137a41a7538553a464e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bonked: 0
   Scoreworth: 0
   Leftmostlane: -9
   Rightmostlane: 9
@@ -4657,6 +4670,7 @@ MonoBehaviour:
   overridesprite: {fileID: 1051670489}
   scoreKeeper: {fileID: 0}
   Katmanager: {fileID: 932180866}
+  physTagCompare: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
