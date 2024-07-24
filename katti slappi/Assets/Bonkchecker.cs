@@ -86,6 +86,7 @@ public class Bonkchecker : MonoBehaviour
             case 1:
                 rb.velocity = new Vector3(0, (2f + Katmanager.Vel.y) * -1.5f, 0);
                 SendMessageUpwards("Score", 50);
+                bonked = true;
                 physTagCompare = 0;
                 break;
             case 2:
@@ -95,6 +96,7 @@ public class Bonkchecker : MonoBehaviour
             case 3:
                 rb.velocity = new Vector2(0, 0);
                 transform.position = new Vector2(-10, -10);
+                bonked = true;
                 physTagCompare = 0;
                 break;
         }
