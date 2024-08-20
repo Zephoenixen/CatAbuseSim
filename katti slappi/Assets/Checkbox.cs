@@ -27,25 +27,25 @@ public class Checkbox : MonoBehaviour
         switch(collision.gameObject.name)
         {
             case "Fernando":
-                SendMessageUpwards("Katreset", 1f);
+                SendMessageUpwards("Katreset", 1);
                 break;
             case "Ost":
-                SendMessageUpwards("Katreset", 2f);
+                SendMessageUpwards("Katreset", 2);
                 break;
             case "Kattemad":
-                SendMessageUpwards("Katreset", 3f);
+                SendMessageUpwards("Katreset", 3);
                 break;
             case "Patooty":
-                SendMessageUpwards("Katreset", 4f);
+                SendMessageUpwards("Katreset", 4);
                 break;
             case "Milk":
-                SendMessageUpwards("Katreset", 5f);
+                SendMessageUpwards("Katreset", 5);
                 break;
             case "Bernard":
-                SendMessageUpwards("Katreset", 6f);
+                SendMessageUpwards("Katreset", 6);
                 break;
             case "Storemis":
-                SendMessageUpwards("Katreset", 7f);
+                SendMessageUpwards("Katreset", 7);
                 break;
         }
 

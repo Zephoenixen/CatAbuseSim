@@ -9,15 +9,7 @@ using Unity.VisualScripting;
 public class Katmanager : MonoBehaviour
 {
     //Liste af ting der skal bruges
-    public GameObject Ost;
-    public GameObject Patooty;
-    public GameObject Fernando;
-    public GameObject Kattemad;
-    public GameObject Milk;
-    public GameObject Bernard;
-    public GameObject Storemis;
     AudioSource Audio;
-    
     
     public int points;
     public ScoreKeeper ScoreKeeper;
@@ -45,14 +37,10 @@ public class Katmanager : MonoBehaviour
     public bool[] PosAvaliable;
     public int[] Pos;
     public bool[] KatAvaliable;
+    // Kattene i et array
+    public GameObject[] Kats;
     // Rigidbodysne fra kattene sådan vi kan få dem til at gå op
-    public Rigidbody2D Ferb;
-    public Rigidbody2D Osrb;
-    public Rigidbody2D Parb;
-    public Rigidbody2D Karb;
-    public Rigidbody2D Mirb;
-    public Rigidbody2D Berb;
-    public Rigidbody2D Strb;
+    public Rigidbody2D[] KatRb2D;
 
     private void Start()
     {
@@ -88,45 +76,10 @@ public class Katmanager : MonoBehaviour
                 nextKat = Time.timeSinceLevelLoad + cooldown;
                 //Debuglog for at tjekke det virker
                 //Debug.Log("bevaegelse");
-                //De her 4 felter står for at rykke dem og give dem velocitet sådan de går op
-                switch (RandoKat)
-                {
-                    case 0:
-                        Fernando.transform.position = new Vector2(Pos[RandoPos], -9);
-                        Ferb.velocity = Vel;
-                        Fernando.SendMessage("Checkbonk", true);
-                        break;
-                    case 1:
-                        Ost.transform.position = new Vector2(Pos[RandoPos], -9);
-                        Osrb.velocity = Vel;
-                        Ost.SendMessage("Checkbonk", true);
-                        break;
-                    case 2:
-                        Patooty.transform.position = new Vector2(Pos[RandoPos], -9);
-                        Parb.velocity = Vel;
-                        Patooty.SendMessage("Checkbonk", true);
-                        break;
-                    case 3:
-                        Kattemad.transform.position = new Vector2(Pos[RandoPos], -9);
-                        Karb.velocity = Vel;
-                        Kattemad.SendMessage("Checkbonk", true);
-                        break;
-                    case 4:
-                        Milk.transform.position = new Vector2(Pos[RandoPos], -9);
-                        Mirb.velocity = Vel;
-                        Milk.SendMessage("Checkbonk", true);
-                        break;
-                    case 5:
-                        Bernard.transform.position = new Vector2(Pos[RandoPos], -9);
-                        Berb.velocity = Vel;
-                        Bernard.SendMessage("Checkbonk", true);
-                        break;
-                    case 6:
-                        Storemis.transform.position = new Vector2(Pos[RandoPos], -9);
-                        Strb.velocity = Vel;
-                        Storemis.SendMessage("Checkbonk", true);
-                        break;
-                }
+                //De her 3 felter står for at rykke dem og give dem velocitet sådan de går op
+                Kats[RandoKat].transform.position = new Vector2(Pos[RandoPos], -9);
+                KatRb2D[RandoKat].velocity = Vel;
+                Kats[RandoKat].SendMessage("Checkbonk", true);
             }
         }
     }
@@ -177,50 +130,12 @@ public class Katmanager : MonoBehaviour
     //Den her sætter det positions bool array vædier til false når positionerne bliver tomme sådan at der kan komme nye katte, får sin info fra Checkbox
     public void Posreset(int posreset)
     {
-        switch (posreset)
-        {
-            case 1:
-                PosAvaliable[0] = true;
-                break;
-            case 2:
-                PosAvaliable[1] = true;
-                break;
-            case 3:
-                PosAvaliable[2] = true;
-                break;
-            case 4:
-                PosAvaliable[3] = true;
-                break;
-        }
+        PosAvaliable[posreset-1] = true;
     }
     //Den her sætter det katte bool array vædier til false når katte kommer ud af skærmen sådan at de kan spawne andre steder
-    public void Katreset(float katreset)
+    public void Katreset(int katreset)
     {
-        switch (katreset)
-        {
-            case 1:
-                KatAvaliable[0] = true;
-                break;
-            case 2:
-                KatAvaliable[1] = true;
-                break;
-            case 3:
-                KatAvaliable[2] = true;
-                break;
-            case 4:
-                KatAvaliable[3] = true;
-                break;
-            case 5:
-                KatAvaliable[4] = true;
-                break;
-            case 6:
-                KatAvaliable[5] = true;
-                break;
-            case 7:
-                KatAvaliable[6] = true;
-                break;
-        }
-
+        KatAvaliable[katreset-1] = true;
     }
 
     public void Progression()
