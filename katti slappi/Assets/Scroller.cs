@@ -6,18 +6,18 @@ public class Scroller : MonoBehaviour
 { 
     public float scrollSpeed;
 
-private new Renderer renderer;
-private Vector2 savedOffset;
+    private new Renderer renderer;
 
-void Start()
-{
-    renderer = GetComponent<Renderer>();
-}
 
-void Update()
-{
-    float x = Mathf.Repeat(Time.time * scrollSpeed, 1);
-    Vector2 offset = new Vector2(x, 0);
-    renderer.sharedMaterial.SetTextureOffset("_MainTex", offset);
-}
+    void Start()
+    {
+        renderer = GetComponent<Renderer>();
+    }
+
+    void Update()
+    {
+        float x = Mathf.Repeat(Time.time * scrollSpeed, 1);
+        Vector2 offset = new Vector2(x, 0);
+        renderer.sharedMaterial.SetTextureOffset("_MainTex", offset);
+    }
 }
