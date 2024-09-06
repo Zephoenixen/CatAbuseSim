@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4194eeca441fc00458bef50ab2a44729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0.3
+  scrollSpeed: -0.15
 --- !u!1 &69141617
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,7 +642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4194eeca441fc00458bef50ab2a44729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: -0.15
+  scrollSpeed: 0.2
 --- !u!64 &555137125
 MeshCollider:
   m_ObjectHideFlags: 0
